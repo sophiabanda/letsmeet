@@ -1,19 +1,80 @@
 # letsmeet
 
+Welcome to **Let's Meet!** An app where you find events by location, with offline functionality.
 Check me out now at https://sophiabanda.github.io/letsmeet/
+
+# Dependencies
+
+```"dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.6.0",
+    "workbox-broadcast-update": "^6.6.0",
+    "workbox-cacheable-response": "^6.6.0",
+    "workbox-core": "^6.6.0",
+    "workbox-expiration": "^6.6.0",
+    "workbox-google-analytics": "^6.6.0",
+    "workbox-navigation-preload": "^6.6.0",
+    "workbox-precaching": "^6.6.0",
+    "workbox-range-requests": "^6.6.0",
+    "workbox-routing": "^6.6.0",
+    "workbox-strategies": "^6.6.0",
+    "workbox-streams": "^6.6.0"
+  }
+```
+
+**Dev Dependencies**
+
+```"devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+```
+
+# To run locally
+
+```
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+
+Happy hacking!
+
+```
 
 ## User Scenarios
 
-**_As a logged-in user,
+**_As a user,
 I should be able to use the search to filter by city
 So I can find events in cities I am interestd in_**
+
+**Scenario:** A user can log-in the the homepage of the app and wants to see what events are taking place in their city this week
+**Given:** A user logs in
+**When:** The user is taken to the homepage of the app
+**Then:** They are presented with a search bar to search for events in their city
 
 **_As a logged-in user,
 I should be able to hide events details
 So that I can see more or less information about an event._**
 
 **Scenario:** A user has filtered events by their city, but only cares to see the event type and title.
-**Given:** A user has utilzed the fitler search to narrow results down to events in their city
+**Given:** A user has utilzed the filter search to narrow results down to events in their city
 **When:** The user clicks to hide events details
 **Then:** The detailed event description is hidden from view
 
