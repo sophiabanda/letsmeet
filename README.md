@@ -38,7 +38,7 @@ Check me out now at https://sophiabanda.github.io/letsmeet/
 # To run locally
 
 ```
-Inside that directory, you can run several commands:
+Inside the directory, you can run several commands:
 
   npm start
     Starts the development server.
