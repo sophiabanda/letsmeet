@@ -5,15 +5,16 @@ Check me out now at https://sophiabanda.github.io/letsmeet/
 ## User Scenarios
 
 **_As a logged-in user,
+I should be able to use the search to filter by city
+So I can find events in cities I am interestd in_**
+
+**_As a logged-in user,
 I should be able to hide events details
 So that I can see more or less information about an event._**
 
 **Scenario:** A user has filtered events by their city, but only cares to see the event type and title.
-
 **Given:** A user has utilzed the fitler search to narrow results down to events in their city
-
 **When:** The user clicks to hide events details
-
 **Then:** The detailed event description is hidden from view
 
 **_As a logged-in user,
