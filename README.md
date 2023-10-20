@@ -3,6 +3,9 @@
 Welcome to **Let's Meet!** An app where you find events by location, with offline functionality.
 Check me out now at https://sophiabanda.github.io/letsmeet/
 
+letsmeet is a progressive web app that allows an OAuth client to access local calendar events utilizing the google calendar API.
+We will be utilizing serverless functions for their availability, scalability and easier overall implementation and maintentenence.
+
 # Dependencies
 
 ```"dependencies": {
