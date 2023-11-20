@@ -16,7 +16,7 @@ const CitySearch = ({ allLocations }) => {
     setSuggestions(filteredLocations);
   };
   return (
-    <div id="city-search">
+    <div data-testid="city-search">
       <input
         type="text"
         className="city"
