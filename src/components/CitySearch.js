@@ -15,24 +15,26 @@ const CitySearch = ({ allLocations }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
   };
+
   return (
     <div data-testid="city-search">
       <input
         type="text"
         className="city"
         placeholder="Search for a city"
-        value={query}
         onFocus={() => setShowSuggestions(true)}
+        value={query}
         onChange={handleInputChanged}
       ></input>
       {showSuggestions ? (
         <ul className="suggestions">
           {suggestions.map((suggestion) => {
-            return <li key={suggestion}>{suggestion}</li>;
+            return (
+              <li key="See all cities">
+                <b>See all cities</b>
+              </li>
+            );
           })}
-          <li key="See all cities">
-            <b>See all cities</b>
-          </li>
         </ul>
       ) : null}
     </div>

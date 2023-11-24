@@ -9,5 +9,5 @@ const EventList = ({ events }) => {
     </ul>
   );
 };
-
+//in order for this test to fail, we add the turnary operator to our mapping just in case props does not exist
 export default EventList;
