@@ -15,6 +15,11 @@ const CitySearch = ({ allLocations }) => {
     setQuery(value);
     setSuggestions(filteredLocations);
   };
+  const handleItemClicked = (event) => {
+    const value = event.target.textContent;
+    setQuery(value);
+    setShowSuggestions(false);
+  };
 
   return (
     <div data-testid="city-search">
@@ -22,19 +27,22 @@ const CitySearch = ({ allLocations }) => {
         type="text"
         className="city"
         placeholder="Search for a city"
-        onFocus={() => setShowSuggestions(true)}
         value={query}
+        onFocus={() => setShowSuggestions(true)}
         onChange={handleInputChanged}
-      ></input>
+      />
       {showSuggestions ? (
         <ul className="suggestions">
           {suggestions.map((suggestion) => {
             return (
-              <li key="See all cities">
-                <b>See all cities</b>
+              <li onClick={handleItemClicked} key={suggestion}>
+                {suggestion}
               </li>
             );
           })}
+          <li key="See all cities" onClick={handleItemClicked}>
+            <b>See all cities</b>
+          </li>
         </ul>
       ) : null}
     </div>
