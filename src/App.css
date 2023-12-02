@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   list-style-type: none;
+  text-decoration: none;
 }
 
 .App-logo {
@@ -21,7 +22,7 @@ button {
 }
 
 #event-border {
-  border: solid red;
+  border: solid green;
   margin: auto;
   width: 50%;
   padding: 10px;

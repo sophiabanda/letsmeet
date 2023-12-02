@@ -36,8 +36,8 @@ it("by default, has the event details hidden", () => {
 it("shows event details when user clicks the 'show details' button", async () => {
   render(<Event />);
   const user = userEvent.setup();
-  const detailsButton = screen.getByText("Details");
-  const hideButton = screen.getByText("Hide Details");
+  const detailsButton = screen.getAllByText("Details");
+  const hideButton = screen.getAllByText("Hide Details");
 
   await user.click(detailsButton);
 
@@ -47,8 +47,8 @@ it("shows event details when user clicks the 'show details' button", async () =>
 it("hides the event details when the user clicks the 'hide details' button", async () => {
   render(<Event />);
   const user = userEvent.setup();
-  const detailsButton = screen.getByText("Details");
-  const hideButton = screen.getByText("Hide Details");
+  const detailsButton = screen.getAllByText("Details");
+  const hideButton = screen.getAllByText("Hide Details");
 
   await user.click(hideButton);
 
