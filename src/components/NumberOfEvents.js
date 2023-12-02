@@ -30,7 +30,7 @@ export const NumberOfEvents = () => {
         <button onClick={handleSubmit}>Submit</button>
         <div>
           {selectedCities.map((city) => {
-            return <ul>{city.location}</ul>;
+            return <ul data-testid="city-list">{city.location}</ul>;
           })}
         </div>
       </div>
