@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../api";
 
 const CitySearch = ({ allLocations }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -22,7 +23,7 @@ const CitySearch = ({ allLocations }) => {
   };
 
   return (
-    <div data-testid="city-search">
+    <div data-testid="city-search" id="city-search-border">
       <input
         type="text"
         className="city"
