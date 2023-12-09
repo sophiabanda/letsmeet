@@ -19,13 +19,13 @@ it("contains a default value of 32", () => {
 it("has value that changes with user input", async () => {
   render(<NumberOfEvents />);
   const user = userEvent.setup();
-  const textBox = screen.queryByRole("texbox");
+  const textBox = screen.queryByRole("textbox");
   const submitButton = screen.queryByRole("button", /submit/i);
 
   await user.type(textBox, "{backspace}{backspace}10");
   await user.click(submitButton);
 
-  const listOfCities = screen.getByTestId("citylist");
+  const listOfCities = screen.queryByRole("listitem");
 
-  expect(listOfCities).toBeVisible();
+  expect(listOfCities).toBeInTheDocument();
 });
