@@ -28,17 +28,9 @@ export const NumberOfEvents = () => {
           placeholder="Number of Cities"
         ></input>
         <button onClick={handleSubmit}>Submit</button>
-        <div>
+        <div data-testid={"event-list"}>
           {selectedCities.map((city) => {
-            return (
-              <ul
-                key={city.id}
-                aria-labelledby={"list of specified number of cities"}
-                className="city-list"
-              >
-                {city.location}
-              </ul>
-            );
+            return <ul key={city.id}>{city.location}</ul>;
           })}
         </div>
       </div>

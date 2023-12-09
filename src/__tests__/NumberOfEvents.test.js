@@ -25,7 +25,7 @@ it("has value that changes with user input", async () => {
   await user.type(textBox, "{backspace}{backspace}10");
   await user.click(submitButton);
 
-  const listOfCities = screen.queryByRole("listitem");
+  const listOfCities = screen.getByTestId("event-list");
 
   expect(listOfCities).toBeInTheDocument();
 });
