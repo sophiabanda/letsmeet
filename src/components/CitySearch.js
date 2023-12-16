@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../api";
 
 const CitySearch = ({ allLocations }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -23,6 +24,7 @@ const CitySearch = ({ allLocations }) => {
 
   return (
     <div data-testid="city-search">
+      <label>Search for a City: </label>
       <input
         type="text"
         className="city"
@@ -40,11 +42,18 @@ const CitySearch = ({ allLocations }) => {
               </li>
             );
           })}
-          <li key="See all cities" onClick={handleItemClicked}>
-            <b>See all cities</b>
+          <li
+            style={{
+              textStyleType: "none",
+              textDecoration: "none",
+            }}
+            key="See all cities"
+            onClick={handleItemClicked}
+          >
+            <b>All Cities Appear Here</b>
           </li>
         </ul>
-      ) : null}
+      ) : null}{" "}
     </div>
   );
 };

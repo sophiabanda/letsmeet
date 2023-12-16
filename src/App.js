@@ -1,12 +1,15 @@
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import "./App.css";
+import { NumberOfEvents } from "./components/NumberOfEvents";
+import mockData from "./mock-data";
 
 const App = () => {
   return (
-    <div className="App">
+    <div id="app-border" className="App">
       <CitySearch />
-      <EventList />
+      <NumberOfEvents events={mockData} />
+      <EventList events={mockData} />
     </div>
   );
 };

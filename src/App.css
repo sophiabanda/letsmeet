@@ -1,10 +1,43 @@
 .App {
   text-align: center;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+button {
+  color: red;
+}
+
+#app-border {
+  border: solid 8px red;
+}
+
+#eventlist-border {
+  border: solid blue;
+}
+
+#event-border {
+  border: solid green;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+p {
+  border: solid purple;
+}
+
+li {
+  text-decoration: none;
+}
+
+#city-search-border {
+  border: solid green;
 }
 
 @media (prefers-reduced-motion: no-preference) {
