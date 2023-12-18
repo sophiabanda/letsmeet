@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../api";
 
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+
+  console.log(allLocations);
+  console.log(suggestions);
 
   const handleInputChanged = (event) => {
     const value = event.target.value;
@@ -20,7 +23,20 @@ const CitySearch = ({ allLocations }) => {
     const value = event.target.textContent;
     setQuery(value);
     setShowSuggestions(false);
+    setCurrentCity(value);
   };
+
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [allLocations]);
+
+  //the course wanted me to stringify the dependency, but react wanted me to change it to this. It warned:
+  // React Hook useEffect has a missing dependency: 'allLocations'. Either include it or remove the dependency array.
+  // If 'setSuggestions' needs the current value of 'allLocations',
+  // you can also switch to useReducer instead of useState and read 'allLocations' in the reducer.eslintreact - hooks / exhaustive - deps
+  // React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be
+  // statically checked.eslintreact - hooks / exhaustive - deps
+  // (parameter) allLocations: any
 
   return (
     <div data-testid="city-search">
@@ -35,7 +51,7 @@ const CitySearch = ({ allLocations }) => {
       />
       {showSuggestions ? (
         <ul className="suggestions">
-          {suggestions.map((suggestion) => {
+          {suggestions?.map((suggestion) => {
             return (
               <li onClick={handleItemClicked} key={suggestion}>
                 {suggestion}

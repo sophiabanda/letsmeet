@@ -1,11 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CitySearch from "../components/CitySearch";
 import { extractLocations, getEvents } from "../api";
+import App from "../App";
 
 describe("<CitySearch /> component", () => {
   test("renders text input", () => {
-    render(<CitySearch />);
+    render(<CitySearch allLocations={[]} />);
     const cityTextBox = screen.queryByRole("textbox");
 
     expect(cityTextBox).toBeInTheDocument();
@@ -13,14 +14,14 @@ describe("<CitySearch /> component", () => {
   });
 
   test("suggestions list is hidden by default", () => {
-    render(<CitySearch />);
+    render(<CitySearch allLocations={[]} />);
     const suggestionList = screen.queryByRole("list");
 
     expect(suggestionList).not.toBeInTheDocument();
   });
 
   test("renders a list of suggestions when city textbox gains focus", async () => {
-    render(<CitySearch />);
+    render(<CitySearch allLocations={[]} />);
     const user = userEvent.setup();
     const cityTextBox = screen.queryByRole("textbox");
     await user.click(cityTextBox);
@@ -34,7 +35,7 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    render(<CitySearch allLocations={allLocations} />);
+    render(<CitySearch allLocations={[]} />);
 
     // user types "Berlin" in city textbox
     const cityTextBox = screen.queryByRole("textbox");
@@ -51,9 +52,34 @@ describe("<CitySearch /> component", () => {
 
     // get all <li> elements inside the suggestion list
     const suggestionListItems = screen.queryAllByRole("listitem");
-    expect(suggestionListItems).toHaveLength(suggestions.length + 1);
+    expect(suggestionListItems).toHaveLength(suggestions.length);
     for (let i = 0; i < suggestions.length; i += 1) {
       expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
     }
+  });
+});
+
+describe("<CitySearch /> integration", () => {
+  it("renders suggestions list when the app is rendered", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const citySearchContainer = render(
+      <CitySearch allLocations={[]} />
+    ).container;
+    //Rendering component returns an object with info about the rendered component, including the contianer property.
+    //The container property contains the root DOM element of rendered component (the outermost elements that wraps the entire rendered output)
+    //So the entire line basically says: redner <CitySearch /> and get the root DOM element of the rendered component.
+
+    const cityTextBox = within(citySearchContainer).queryByRole("textbox");
+
+    await user.click(cityTextBox);
+
+    const allEvents = await getEvents();
+    const allLocations = extractLocations(allEvents);
+
+    const suggestionListItems =
+      within(citySearchContainer).queryAllByRole("listitem");
+
+    expect(suggestionListItems.length).toBe(allLocations.length + 1);
   });
 });

@@ -13,20 +13,12 @@ button {
   color: red;
 }
 
-#app-border {
-  border: solid 8px red;
-}
-
-#eventlist-border {
-  border: solid blue;
-}
-
-#event-border {
+/* #event-border {
   border: solid green;
   margin: auto;
   width: 50%;
   padding: 10px;
-}
+} */
 
 p {
   border: solid purple;
@@ -34,10 +26,6 @@ p {
 
 li {
   text-decoration: none;
-}
-
-#city-search-border {
-  border: solid green;
 }
 
 @media (prefers-reduced-motion: no-preference) {
