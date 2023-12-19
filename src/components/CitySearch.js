@@ -6,9 +6,6 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  console.log(allLocations);
-  console.log(suggestions);
-
   const handleInputChanged = (event) => {
     const value = event.target.value;
     const filteredLocations = allLocations
@@ -39,7 +36,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
   // (parameter) allLocations: any
 
   return (
-    <div data-testid="city-search">
+    <div data-testid="city-search" id="city-search">
       <label>Search for a City: </label>
       <input
         type="text"
@@ -58,14 +55,7 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
               </li>
             );
           })}
-          <li
-            style={{
-              textStyleType: "none",
-              textDecoration: "none",
-            }}
-            key="See all cities"
-            onClick={handleItemClicked}
-          >
+          <li key="See all cities" onClick={handleItemClicked}>
             <b>All Cities Appear Here</b>
           </li>
         </ul>

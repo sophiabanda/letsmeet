@@ -1,38 +1,39 @@
-import { useState } from "react";
-import mockData from "../mock-data";
+import { useEffect, useState } from "react";
 
-export const NumberOfEvents = () => {
-  const [number, setNumber] = useState(32);
-  const [selectedCities, setSelectedCities] = useState([]);
+export const NumberOfEvents = ({ currentNoE, setCurrentNoE }) => {
+  const [number, setNumber] = useState(currentNoE);
 
-  const specifiedAmountOfCities = (mockData, number) => {
-    const shuffleData = mockData.slice().sort(() => Math.random() - 0.5);
-    return shuffleData.slice(0, number);
-  };
+  console.log("currentNOE: ", currentNoE);
+  console.log(typeof setCurrentNoE);
 
   const handleSubmit = () => {
-    const selectedCities = specifiedAmountOfCities(mockData, number);
-    setSelectedCities(selectedCities);
-    console.log("Selected cities:", selectedCities);
+    // const NOE = parseInt(number, 10);
+    // setCurrentNoE(NOE);
+    setCurrentNoE(number);
   };
+
+  //try typing text in the input to see if it breaks...
+  //It did not break, and I changed the input type to number from text
+  //leaving as text: parse code left NaN if text was input, vs
+  // nothing happening at all. With number type, nothing happen with text, but
+  //it hardly allows you to type. parse code was also throwing an error
+  //which I'd have to recreate to recall or understand lol
+
+  useEffect(() => {
+    setNumber(currentNoE);
+  }, [currentNoE]);
 
   return (
     <>
       <div id="number-of-events">
-        <label>Number of Cities: </label>
+        <label>Number of Events: </label>
         <input
           value={number}
+          type="number"
           onChange={(e) => setNumber(e.target.value)}
-          id="number-of-cities-box"
-          type="text"
-          placeholder="Number of Cities"
+          placeholder="Number of Events"
         ></input>
         <button onClick={handleSubmit}>Submit</button>
-        <div data-testid={"event-list"}>
-          {selectedCities.map((city) => {
-            return <ul key={city.id}>{city.location}</ul>;
-          })}
-        </div>
       </div>
     </>
   );

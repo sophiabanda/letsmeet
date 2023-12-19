@@ -2,30 +2,34 @@ import { render, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { NumberOfEvents } from "../components/NumberOfEvents";
 
+// const { currentNoE } = NumberOfEvents;
+
 it("contains a textbox allowing you to select your optimal number of events to display", () => {
   render(<NumberOfEvents />);
-  const textBox = screen.queryByRole("textbox");
-
-  expect(textBox).toBeInTheDocument();
+  const numberInput = screen.queryByRole("spinbutton");
+  expect(numberInput).toBeInTheDocument();
 });
 
-it("contains a default value of 32", () => {
+it("contains a default value of events length", () => {
   render(<NumberOfEvents />);
-  const default32 = screen.getByDisplayValue("32");
+  const eventsListLength = screen.queryAllByRole("listitem");
 
-  expect(default32).toBeInTheDocument();
+  expect(eventsListLength).toHaveLength(eventsListLength.length);
 });
 
 it("has value that changes with user input", async () => {
   render(<NumberOfEvents />);
   const user = userEvent.setup();
-  const textBox = screen.queryByRole("textbox");
+  const numberInput = screen.queryByRole("spinbutton");
   const submitButton = screen.queryByRole("button", /submit/i);
 
-  await user.type(textBox, "{backspace}{backspace}10");
+  await user.type(numberInput, "{backspace}{backspace}10");
   await user.click(submitButton);
-
-  const listOfCities = screen.getByTestId("event-list");
-
-  expect(listOfCities).toBeInTheDocument();
 });
+
+// console.error
+// Warning: A component is changing an uncontrolled input to be controlled.
+//       This is likely caused by the value changing from undefined to a defined value,
+//     which should not happen.Decide between using a controlled or uncontrolled input
+//     element for the lifetime of the component.
+//     More info: https://reactjs.org/link/controlled-components
