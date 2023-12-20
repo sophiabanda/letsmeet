@@ -5,8 +5,10 @@ import { extractLocations, getEvents } from "../api";
 import App from "../App";
 
 describe("<CitySearch /> component", () => {
-  test("renders text input", () => {
-    render(<CitySearch allLocations={[]} />);
+  test("renders text input", async () => {
+    const allEvents = await getEvents();
+    const allLocations = extractLocations(allEvents);
+    render(<CitySearch allLocations={allLocations} />);
     const cityTextBox = screen.queryByRole("textbox");
 
     expect(cityTextBox).toBeInTheDocument();
@@ -35,7 +37,7 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    render(<CitySearch allLocations={[]} />);
+    render(<CitySearch allLocations={allLocations} />);
 
     // user types "Berlin" in city textbox
     const cityTextBox = screen.queryByRole("textbox");
@@ -50,15 +52,10 @@ describe("<CitySearch /> component", () => {
         })
       : [];
 
-    console.log("cityTextBox.value:", cityTextBox.value);
-    console.log("suggestions:", suggestions);
-
     // get all <li> elements inside the suggestion list
     const suggestionListItems = screen.queryAllByRole("listitem");
     expect(suggestionListItems).toHaveLength(suggestions.length);
-    // for (let i = 0; i < suggestions.length; i += 1) {
-    //   expect(suggestionListItems[i].textContent).toBe(suggestions[i]);
-    // }
+    expect(suggestionListItems).toHaveLength(suggestions.length);
   });
 });
 
