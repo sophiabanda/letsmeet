@@ -54,8 +54,7 @@ describe("<CitySearch /> component", () => {
 
     // get all <li> elements inside the suggestion list
     const suggestionListItems = screen.queryAllByRole("listitem");
-    expect(suggestionListItems).toHaveLength(suggestions.length);
-    expect(suggestionListItems).toHaveLength(suggestions.length);
+    expect(suggestionListItems).toHaveLength(suggestions.length + 1);
   });
 });
 

@@ -2,8 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { NumberOfEvents } from "../components/NumberOfEvents";
 import { userEvent } from "@testing-library/user-event";
 
-const { currentNoE, setCurrentNoE } = NumberOfEvents;
-
 it("contains a textbox allowing you to select your optimal number of events to display", () => {
   render(<NumberOfEvents />);
   const numberInput = screen.queryByRole("spinbutton");
@@ -18,10 +16,14 @@ it("contains a default value of events length", () => {
 });
 
 it("has value that changes with user input", async () => {
+  const currentNoE = 35;
+  const setCurrentNoE = jest.fn(() => console.log("Mock Function Called!"));
+
   render(
     <NumberOfEvents currentNoE={currentNoE} setCurrentNoE={setCurrentNoE} />
   );
   const user = userEvent.setup();
+
   const numberInput = screen.queryByRole("spinbutton");
   const submitButton = screen.queryByRole("button", /submit/i);
 

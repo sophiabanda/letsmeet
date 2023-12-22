@@ -8,10 +8,10 @@ export const NumberOfEvents = ({ currentNoE, setCurrentNoE }) => {
     // const NOE = parseInt(number, 10);
     // setCurrentNoE(NOE);
   };
-  console.log("Type of: ", typeof setCurrentNoE);
-  console.log("currentNOE: ", currentNoE);
+  // console.log("Type of: ", typeof setCurrentNoE);
+  // console.log("currentNOE: ", currentNoE);
 
-  //try typing text in the input to see if it breaks...
+  //mentor: try typing text in the input to see if it breaks:
   //It did not break, and I changed the input type to number from text
   //leaving as text: parse code left NaN if text was input, vs
   // nothing happening at all. With number type, nothing happen with text, but
