@@ -45,7 +45,7 @@ const checkToken = async (accessToken) => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
-  if (window.localStorage.href.startsWith("http://localhost")) {
+  if (window.location.href.startsWith("http://localhost")) {
     return mockData;
   }
 
@@ -53,7 +53,6 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    //removes unnecessary query parameters to leave behind a more simple url
     const url =
       "https://fr0w8sk6bg.execute-api.us-east-1.amazonaws.com/dev/api/get-events" +
       "/" +
