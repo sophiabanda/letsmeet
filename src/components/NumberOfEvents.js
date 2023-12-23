@@ -27,15 +27,19 @@ export const NumberOfEvents = ({ currentNoE, setCurrentNoE }) => {
       <div id="number-of-events">
         <label>Number of Events: </label>
         <input
-          value={number}
           type="number"
+          value={number}
           onChange={(e) => setNumber(e.target.value)}
-          placeholder="Number of Events"
+          placeholder="NO. OF EVENTS"
         ></input>
-        <button data-testid="submit-button" onClick={handleSubmit}>
-          Submit
-        </button>
       </div>
+      <button
+        className="submit-btn"
+        data-testid="submit-button"
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
     </>
   );
 };
