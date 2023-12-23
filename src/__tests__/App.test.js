@@ -1,7 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import App from "../App";
-import CitySearch from "../components/CitySearch";
 import { getEvents } from "../api";
 
 describe("<App /> component", () => {
@@ -22,9 +21,7 @@ describe("<App /> integration", () => {
   it("renders a list of events matching the city selected by the user", async () => {
     const user = userEvent.setup();
     render(<App />);
-    render(<CitySearch />);
-    const citySearchContainer = render(<CitySearch />).container;
-
+    const citySearchContainer = screen.getByTestId("city-search");
     const CitySearchInput = within(citySearchContainer).queryByRole("textbox");
 
     await user.type(CitySearchInput, "Berlin");
@@ -32,7 +29,7 @@ describe("<App /> integration", () => {
       within(citySearchContainer).queryByText("Berlin, Germany");
     await user.click(berlinSuggestionItem);
 
-    const EventListDOM = screen.getByTestId("#event-list");
+    const EventListDOM = screen.getByTestId("event-list");
     const allRenderedEventItems =
       within(EventListDOM).queryAllByRole("listitem");
 
