@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/letsmeet/static/css/main.073c9b0a.css",
-    "main.js": "/letsmeet/static/js/main.cf717550.js",
+    "main.css": "/letsmeet/static/css/main.f1225ce4.css",
+    "main.js": "/letsmeet/static/js/main.e76326cc.js",
     "static/js/787.4b564826.chunk.js": "/letsmeet/static/js/787.4b564826.chunk.js",
     "service-worker.js": "/letsmeet/service-worker.js",
-    "static/media/logo.svg": "/letsmeet/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
     "index.html": "/letsmeet/index.html",
-    "main.073c9b0a.css.map": "/letsmeet/static/css/main.073c9b0a.css.map",
-    "main.cf717550.js.map": "/letsmeet/static/js/main.cf717550.js.map",
+    "main.f1225ce4.css.map": "/letsmeet/static/css/main.f1225ce4.css.map",
+    "main.e76326cc.js.map": "/letsmeet/static/js/main.e76326cc.js.map",
     "787.4b564826.chunk.js.map": "/letsmeet/static/js/787.4b564826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.cf717550.js"
+    "static/css/main.f1225ce4.css",
+    "static/js/main.e76326cc.js"
   ]
 }
