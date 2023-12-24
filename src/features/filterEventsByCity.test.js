@@ -2,6 +2,7 @@ import { loadFeature, defineFeature } from "jest-cucumber";
 import App from "../App";
 import { render, screen, within, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
+import { getEvents } from "../api";
 
 const feature = loadFeature("./src/features/filterEventsByCity.feature");
 
@@ -26,7 +27,7 @@ defineFeature(feature, (test) => {
       });
     });
   });
-
+  // ________________________________________
   test("User should see a list of suggestions when they search for a city.", ({
     given,
     when,
@@ -54,22 +55,25 @@ defineFeature(feature, (test) => {
       }
     );
   });
-
+  // ________________________________________
   test("User can select a city from the suggested list.", ({
     given,
     and,
     when,
     then,
   }) => {
-    // render(<App />);
-    const citySearch = screen.getByTestId("city-search");
-    const suggestionListItems = within(citySearch).queryAllByRole("listitem");
-    const citySearchInput = within(citySearch).queryByRole("textbox");
+    let citySearchInput;
+    let citySearch;
     given("user was typing “Berlin” in the city textbox", async () => {
+      render(<App getEvents={getEvents} />);
       const user = userEvent.setup();
+      citySearch = screen.getByTestId("city-search");
+      citySearchInput = within(citySearch).queryByRole("textbox");
       await user.type(citySearchInput, "Berlin");
     });
+    let suggestionListItems;
     and("the list of suggested cities is showing", () => {
+      suggestionListItems = within(citySearch).queryAllByRole("listitem");
       expect(suggestionListItems).toHaveLength(2);
     });
     when(

@@ -22,7 +22,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  console.log("Type of: ", typeof setCurrentNoE);
   let filteredEvents =
     currentCity === "See all cities"
       ? events
