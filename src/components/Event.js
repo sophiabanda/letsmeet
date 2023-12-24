@@ -3,17 +3,18 @@ import { useState } from "react";
 const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
 
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(event?.created));
+  const formattedDate = event?.start.dateTime
+    ? new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      }).format(new Date(event?.start.dateTime))
+    : "TBD";
 
   return (
-    <li className="event" key={event.id}>
+    <li className="event" key={event?.id}>
       <h1>
         Event Title: <br></br>
         {event?.summary}

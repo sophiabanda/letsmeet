@@ -17,6 +17,7 @@ const App = () => {
       setCurrentNoE(allEvents.length);
       setEvents(allEvents);
       setAllLocations(extractLocations(allEvents));
+      console.log(allEvents);
     };
     fetchData();
   }, []);
@@ -36,5 +37,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
