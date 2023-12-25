@@ -17,7 +17,7 @@ it("contains a default value of events length", () => {
 
 it("has value that changes with user input", async () => {
   const currentNoE = 35;
-  const setCurrentNoE = jest.fn(() => console.log("Mock Function Called!"));
+  const setCurrentNoE = jest.fn();
 
   render(
     <NumberOfEvents currentNoE={currentNoE} setCurrentNoE={setCurrentNoE} />

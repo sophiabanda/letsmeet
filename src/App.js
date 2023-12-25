@@ -17,7 +17,6 @@ const App = () => {
       setCurrentNoE(allEvents.length);
       setEvents(allEvents);
       setAllLocations(extractLocations(allEvents));
-      console.log(allEvents);
     };
     fetchData();
   }, []);

@@ -48,7 +48,7 @@ it("toggles event details when user clicks the 'details' button", async () => {
   render(<Event event={event} />);
   const user = userEvent.setup();
 
-  const detailsButton = screen.getByRole("button", { name: /details/i });
+  const detailsButton = screen.getByRole("button", { name: /show details/i });
 
   expect(screen.queryByTestId("event-details")).not.toBeInTheDocument();
   expect(
