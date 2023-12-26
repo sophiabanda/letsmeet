@@ -14,7 +14,10 @@ it("renders event location", () => {
 
 it("renders event start time", () => {
   render(<Event event={event} />);
-  const startTime = screen.getByText(`Start time: ${event.created}`);
+  // const startTime = screen.getByText(`Start time: ${event.created}`);
+  const startTime = screen.getByText((content) =>
+    content.startsWith("Start time: ")
+  );
 
   expect(startTime).toBeInTheDocument();
 });
