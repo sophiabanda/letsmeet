@@ -62,9 +62,6 @@ describe("<CitySearch /> integration", () => {
   it("renders suggestions list when the app is rendered", async () => {
     const user = userEvent.setup();
     render(<App />);
-    //Rendering component returns an object with info about the rendered component, including the contianer property.
-    //The container property contains the root DOM element of rendered component (the outermost elements that wraps the entire rendered output)
-    //So the entire line basically says: redner <CitySearch /> and get the root DOM element of the rendered component.
     const citySearchContainer = screen.getByTestId("city-search");
     const cityTextBox = within(citySearchContainer).queryByRole("textbox");
 
@@ -79,3 +76,7 @@ describe("<CitySearch /> integration", () => {
     expect(suggestionListItems.length).toBe(allLocations.length + 1);
   });
 });
+
+//Rendering component returns an object with info about the rendered component, including the contianer property.
+//The container property contains the root DOM element of rendered component (the outermost elements that wraps the entire rendered output)
+//So the entire line basically says: render <CitySearch /> and get the root DOM element of the rendered component.
