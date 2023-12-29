@@ -28,14 +28,6 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setSuggestions(allLocations);
   }, [allLocations]);
 
-  //the course wanted me to stringify the dependency, but react wanted me to change it to this. It warned:
-  // React Hook useEffect has a missing dependency: 'allLocations'. Either include it or remove the dependency array.
-  // If 'setSuggestions' needs the current value of 'allLocations',
-  // you can also switch to useReducer instead of useState and read 'allLocations' in the reducer.eslintreact - hooks / exhaustive - deps
-  // React Hook useEffect has a complex expression in the dependency array. Extract it to a separate variable so it can be
-  // statically checked.eslintreact - hooks / exhaustive - deps
-  // (parameter) allLocations: any
-
   return (
     <div data-testid="city-search" id="city-search">
       <label>Search for a City: </label>
