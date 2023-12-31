@@ -48,11 +48,8 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
               </li>
             );
           })}
-          <li key="See all cities" onClick={handleItemClicked}>
-            <b>All Cities Appear Here</b>
-          </li>
         </ul>
-      ) : null}{" "}
+      ) : null}
     </div>
   );
 };
