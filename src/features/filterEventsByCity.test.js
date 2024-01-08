@@ -51,7 +51,7 @@ defineFeature(feature, (test) => {
         const citySearch = screen.getByTestId("city-search");
         const suggestionListItems =
           within(citySearch).queryAllByRole("listitem");
-        expect(suggestionListItems).toHaveLength(2);
+        expect(suggestionListItems).toHaveLength(1);
       }
     );
   });
@@ -74,7 +74,7 @@ defineFeature(feature, (test) => {
     let suggestionListItems;
     and("the list of suggested cities is showing", () => {
       suggestionListItems = within(citySearch).queryAllByRole("listitem");
-      expect(suggestionListItems).toHaveLength(2);
+      expect(suggestionListItems).toHaveLength(1);
     });
     when(
       "the user selects a city (e.g., “Berlin, Germany”) from the list",

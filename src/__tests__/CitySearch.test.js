@@ -8,7 +8,7 @@ describe("<CitySearch /> component", () => {
   test("renders text input", async () => {
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    render(<CitySearch allLocations={allLocations} />);
+    render(<CitySearch allLocations={allLocations} setInfoAlert={() => {}} />);
     const cityTextBox = screen.queryByRole("textbox");
 
     expect(cityTextBox).toBeInTheDocument();
@@ -16,14 +16,14 @@ describe("<CitySearch /> component", () => {
   });
 
   test("suggestions list is hidden by default", () => {
-    render(<CitySearch allLocations={[]} />);
+    render(<CitySearch allLocations={[]} setInfoAlert={() => {}} />);
     const suggestionList = screen.queryByRole("list");
 
     expect(suggestionList).not.toBeInTheDocument();
   });
 
   test("renders a list of suggestions when city textbox gains focus", async () => {
-    render(<CitySearch allLocations={[]} />);
+    render(<CitySearch allLocations={[]} setInfoAlert={() => {}} />);
     const user = userEvent.setup();
     const cityTextBox = screen.queryByRole("textbox");
     await user.click(cityTextBox);
@@ -37,7 +37,7 @@ describe("<CitySearch /> component", () => {
     const user = userEvent.setup();
     const allEvents = await getEvents();
     const allLocations = extractLocations(allEvents);
-    render(<CitySearch allLocations={allLocations} />);
+    render(<CitySearch allLocations={allLocations} setInfoAlert={() => {}} />);
 
     // user types "Berlin" in city textbox
     const cityTextBox = screen.queryByRole("textbox");
@@ -54,7 +54,7 @@ describe("<CitySearch /> component", () => {
 
     // get all <li> elements inside the suggestion list
     const suggestionListItems = screen.queryAllByRole("listitem");
-    expect(suggestionListItems).toHaveLength(suggestions.length + 1);
+    expect(suggestionListItems).toHaveLength(suggestions.length);
   });
 });
 
@@ -73,7 +73,7 @@ describe("<CitySearch /> integration", () => {
     const suggestionListItems =
       within(citySearchContainer).queryAllByRole("listitem");
 
-    expect(suggestionListItems.length).toBe(allLocations.length + 1);
+    expect(suggestionListItems.length).toBe(allLocations.length);
   });
 });
 
