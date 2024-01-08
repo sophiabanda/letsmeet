@@ -39,7 +39,6 @@ input[type="number"] {
   left: 20px;
   width: 250px;
   z-index: 1000;
-  border: dotted black;
 }
 
 .city {
