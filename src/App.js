@@ -21,15 +21,14 @@ const App = () => {
     } else {
       setWarningAlert("You are now offline");
     }
+    const fetchData = async () => {
+      const allEvents = await getEvents();
+      setCurrentNoE(allEvents.length);
+      setEvents(allEvents);
+      setAllLocations(extractLocations(allEvents));
+    };
     fetchData();
-  }, [currentCity, currentNoE]);
-
-  const fetchData = async () => {
-    const allEvents = await getEvents();
-    setCurrentNoE(allEvents.length);
-    setEvents(allEvents);
-    setAllLocations(extractLocations(allEvents));
-  };
+  }, []);
 
   let filteredEvents =
     currentCity === "See all cities"
