@@ -1,3 +1,4 @@
+import nProgress from "nprogress";
 import mockData from "./mock-data";
 
 /**
@@ -48,7 +49,11 @@ export const getEvents = async () => {
   if (window.location.href.startsWith("http://localhost")) {
     return mockData;
   }
-
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    nProgress.done();
+    return events ? JSON.parse(events) : [];
+  }
   const token = await getAccessToken();
 
   if (token) {
@@ -60,6 +65,8 @@ export const getEvents = async () => {
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
+      nProgress.done();
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
       return result.events;
     } else return null;
   }
@@ -91,23 +98,6 @@ const getToken = async (code) => {
   access_token && localStorage.setItem("access_token", access_token);
   return access_token;
 };
-
-//getToken written as a try/catch statement
-// const getToken = async (code) => {
-//   try {
-//     const encodeCode = encodeURIComponent(code);
-
-//     const response = await fetch( 'YOUR_GET_ACCESS_TOKEN_ENDPOINT' + '/' + encodeCode);
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! status: ${response.status}`)
-//     }
-//     const { access_token } = await response.json();
-//     access_token && localStorage.setItem("access_token", access_token);
-//     return access_token;
-//   } catch (error) {
-//     error.json();
-//   }
-//  }
 
 export const extractLocations = (events) => {
   const extractedLocations = events.map((event) => event.location);
