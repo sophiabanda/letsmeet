@@ -17,13 +17,13 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     if (navigator.onLine) {
       setWarningAlert("");
     } else {
       setWarningAlert("You are now offline");
     }
     const fetchData = async () => {
+      setIsLoading(true);
       const allEvents = await getEvents();
       setCurrentNoE(allEvents.length);
       setEvents(allEvents);
@@ -46,7 +46,6 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-      <div>{isLoading ? <p>Loading...</p> : null}</div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
@@ -57,6 +56,7 @@ const App = () => {
         setCurrentNoE={setCurrentNoE}
         setErrorAlert={setErrorAlert}
       />
+      <div>{isLoading ? <h1 className="loading">Loading...</h1> : null}</div>
       <EventList events={filteredEvents} />
     </div>
   );

@@ -89,7 +89,8 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event {
+.event,
+.loading {
   padding: 10px 10px 35px;
   margin-bottom: 20px;
   text-align: left;
@@ -108,6 +109,7 @@ input[type="number"] {
   outline: none;
   cursor: pointer;
   font-weight: bold;
+  text-align: center;
 }
 
 .submit-btn {
