@@ -22,15 +22,15 @@ const App = () => {
     } else {
       setWarningAlert("You are now offline");
     }
+    setIsLoading(true);
     const fetchData = async () => {
-      setIsLoading(true);
       const allEvents = await getEvents();
       setCurrentNoE(allEvents.length);
       setEvents(allEvents);
       setAllLocations(extractLocations(allEvents));
+      setIsLoading(false);
     };
     fetchData();
-    setIsLoading(false);
   }, []);
 
   let filteredEvents =
