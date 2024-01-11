@@ -14,8 +14,10 @@ const App = () => {
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
   const [warningAlert, setWarningAlert] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     if (navigator.onLine) {
       setWarningAlert("");
     } else {
@@ -28,6 +30,7 @@ const App = () => {
       setAllLocations(extractLocations(allEvents));
     };
     fetchData();
+    setIsLoading(false);
   }, []);
 
   let filteredEvents =
@@ -43,6 +46,7 @@ const App = () => {
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
+      <div>{isLoading ? <p>Loading...</p> : null}</div>
       <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
