@@ -8,14 +8,12 @@ export const NumberOfEvents = ({
   const [number, setNumber] = useState(currentNoE);
 
   const handleSubmit = () => {
-    let errorText;
     if (number < 0 || number === isNaN()) {
-      errorText = "Please input a whole, positive number";
+      setErrorAlert("Please input a whole, positive number");
     } else {
-      errorText = "";
+      setErrorAlert("");
       setCurrentNoE(number);
     }
-    setErrorAlert(errorText);
   };
 
   useEffect(() => {
