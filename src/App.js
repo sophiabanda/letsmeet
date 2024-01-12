@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { extractLocations, getEvents } from "./api";
 import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 import CityEventsChart from "./components/CityEventsChart";
+import EventGenreChart from "./components/EventGenreChart";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -58,7 +59,10 @@ const App = () => {
         setErrorAlert={setErrorAlert}
       />
       <div>{isLoading ? <h1 className="loading">Loading...</h1> : null}</div>
-      <CityEventsChart allLocations={allLocations} events={events} />
+      <div>
+        <EventGenreChart />
+        <CityEventsChart allLocations={allLocations} events={events} />
+      </div>
       <EventList events={filteredEvents} />
     </div>
   );
