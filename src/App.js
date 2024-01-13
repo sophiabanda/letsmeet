@@ -59,8 +59,8 @@ const App = () => {
         setErrorAlert={setErrorAlert}
       />
       <div>{isLoading ? <h1 className="loading">Loading...</h1> : null}</div>
-      <div>
-        <EventGenreChart />
+      <div className="charts-container">
+        <EventGenreChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
       <EventList events={filteredEvents} />
