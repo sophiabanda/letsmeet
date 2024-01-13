@@ -33,10 +33,6 @@ input[type="number"] {
   font-family: "Rubik Broken Fax", Bayon;
 }
 
-.charts-container {
-  grid-template-columns: 1fr 1fr;
-}
-
 .alerts-container {
   position: fixed;
   top: 0px;
@@ -202,5 +198,15 @@ li ul {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.charts-container {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
   }
 }
