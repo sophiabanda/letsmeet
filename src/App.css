@@ -33,6 +33,10 @@ input[type="number"] {
   font-family: "Rubik Broken Fax", Bayon;
 }
 
+.charts-container {
+  grid-template-columns: 1fr 1fr;
+}
+
 .alerts-container {
   position: fixed;
   top: 0px;
