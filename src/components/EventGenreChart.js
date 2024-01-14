@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 const EventGenreChart = ({ events }) => {
   const [data, setData] = useState([]);
   const genres = ["React", "Javascript", "Angular", "jQuery", "Node"];
-  //   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   useEffect(() => {
     setData(getData());
