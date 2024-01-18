@@ -35,8 +35,6 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   };
 
   let ref = useRef();
-  console.log(ref);
-
   useEffect(() => {
     let clickOut = (e) => {
       if (!ref.current.contains(e.target)) {
