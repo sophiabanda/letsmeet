@@ -10,16 +10,16 @@ const EventGenreChart = ({ events }) => {
     "Javascript",
     "Angular",
     "jQuery",
-    "React Native",
     "Node",
+    "React Native",
   ];
   const colors = [
     "#c0c0fc",
+    "#120481",
     "#9191ed",
     "#6f6fe8",
     "#4747ba",
     "#dcdcf2",
-    "#120481",
   ];
 
   useEffect(() => {
