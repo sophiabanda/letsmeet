@@ -58,6 +58,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
               </li>
             );
           })}
+          <li onClick={handleItemClicked}>See all cities</li>
         </ul>
       ) : null}
     </div>
