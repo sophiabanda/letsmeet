@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../api";
 
 const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
@@ -34,6 +34,22 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setInfoAlert("");
   };
 
+  let ref = useRef();
+  console.log(ref);
+
+  useEffect(() => {
+    let clickOut = (e) => {
+      if (!ref.current.contains(e.target)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener("mousedown", clickOut);
+
+    return () => {
+      document.removeEventListener("mousedown", clickOut);
+    };
+  });
+
   useEffect(() => {
     setSuggestions(allLocations);
   }, [allLocations]);
@@ -42,6 +58,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     <div data-testid="city-search" id="city-search">
       <label>Search for a City: </label>
       <input
+        ref={ref}
         type="text"
         className="city"
         placeholder="SEARCH CITY HERE"
