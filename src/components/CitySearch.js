@@ -55,10 +55,9 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   }, [allLocations]);
 
   return (
-    <div data-testid="city-search" id="city-search">
+    <div ref={ref} data-testid="city-search" id="city-search">
       <label>Search for a City: </label>
       <input
-        ref={ref}
         type="text"
         className="city"
         placeholder="SEARCH CITY HERE"

@@ -14,7 +14,7 @@ const CityEventsChart = ({ allLocations, events }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [events]);
+  }, [`${events}`]);
   //I am not understanding well enough what should be in the dependency array and why
 
   const getData = () => {
