@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // const RADIAN = Math.PI / 180;
 
-const EventGenreChart = ({ events }) => {
+const EventGenreChart = ({ events, currentNumberOfEvents }) => {
   const [data, setData] = useState([]);
   const genres = [
     "React",
@@ -24,7 +24,7 @@ const EventGenreChart = ({ events }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [`${events}`]);
+  }, [currentNumberOfEvents, events]);
 
   const renderCustomizedLabel = ({
     cx,

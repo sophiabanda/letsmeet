@@ -28,7 +28,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
-    console.log("value", value);
+    console.log("city value", value);
     setQuery(value);
     setShowSuggestions(false);
     setCurrentCity(value);
@@ -39,7 +39,6 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setQuery("");
     setShowSuggestions(false);
     setCurrentCity("See all cities");
-    console.log("clicked!");
   };
 
   let ref = useRef();

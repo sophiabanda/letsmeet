@@ -60,7 +60,10 @@ const App = () => {
       />
       <div>{isLoading ? <h1 className="loading">Loading...</h1> : null}</div>
       <div className="charts-container">
-        <EventGenreChart events={filteredEvents} />
+        <EventGenreChart
+          events={filteredEvents}
+          currentNumberOfEvents={currentNumberOfEvents}
+        />
         <CityEventsChart allLocations={allLocations} events={filteredEvents} />
       </div>
       <EventList events={filteredEvents} />
