@@ -53,7 +53,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   }, [allLocations]);
 
   return (
-    <div ref={ref} data-testid="city-search" id="city-search">
+    <div data-testid="city-search" id="city-search">
       <label>Search for a City: </label>
       <input
         type="text"
@@ -63,18 +63,20 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
         onFocus={() => setShowSuggestions(true)}
         onChange={handleInputChanged}
       />
-      {showSuggestions ? (
-        <ul className="suggestions">
-          {suggestions?.map((suggestion) => {
-            return (
-              <li onClick={handleItemClicked} key={suggestion}>
-                {suggestion}
-              </li>
-            );
-          })}
-          <li onClick={handleItemClicked}>See all cities</li>
-        </ul>
-      ) : null}
+      <div className="city-ul-div" ref={ref}>
+        {showSuggestions ? (
+          <ul className="suggestions">
+            {suggestions?.map((suggestion) => {
+              return (
+                <li onClick={handleItemClicked} key={suggestion}>
+                  {suggestion}
+                </li>
+              );
+            })}
+            <li onClick={handleItemClicked}>See all cities</li>
+          </ul>
+        ) : null}
+      </div>
     </div>
   );
 };

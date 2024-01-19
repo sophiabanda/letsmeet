@@ -48,6 +48,12 @@ input[type="number"] {
   z-index: 1000;
 }
 
+.city-ul-div {
+  margin: auto;
+  width: 20%;
+  text-align: center;
+}
+
 .charts-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -26,7 +26,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -67,7 +67,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -108,7 +108,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -145,16 +145,16 @@ const mockData = [
     },
     start: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo",
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "tokyo",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "tokyo",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
@@ -190,12 +190,12 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
@@ -227,16 +227,16 @@ const mockData = [
     },
     start: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
@@ -395,7 +395,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -436,7 +436,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -477,7 +477,7 @@ const mockData = [
     },
     end: {
       dateTime: "2020-05-19T17:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "4eahs9ghkhrvkld72hogu9ph3e",
     originalStartTime: {
@@ -514,16 +514,16 @@ const mockData = [
     },
     start: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
@@ -555,16 +555,16 @@ const mockData = [
     },
     start: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
@@ -596,16 +596,16 @@ const mockData = [
     },
     start: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     end: {
       dateTime: "2020-05-20T15:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     recurringEventId: "3qtd6uscq4tsi6gc7nmmtpqlct",
     originalStartTime: {
       dateTime: "2020-05-20T14:00:00+02:00",
-      timeZone: "Europe/Berlin",
+      timeZone: "Tokyo, Japan",
     },
     iCalUID: "3qtd6uscq4tsi6gc7nmmtpqlct@google.com",
     sequence: 0,
