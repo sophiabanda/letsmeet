@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 
 export const NumberOfEvents = ({
-  currentNoE,
-  setCurrentNoE,
+  currentNumberOfEvents,
+  setCurrentNumberOfEvents,
   setErrorAlert,
 }) => {
-  const [number, setNumber] = useState(currentNoE);
+  const [number, setNumber] = useState(currentNumberOfEvents);
 
   const handleSubmit = () => {
     if (number < 0 || number === isNaN()) {
       setErrorAlert("Please input a whole, positive number");
     } else {
       setErrorAlert("");
-      setCurrentNoE(number);
+      setCurrentNumberOfEvents(number);
     }
   };
 
   useEffect(() => {
-    setNumber(currentNoE);
-  }, [currentNoE]);
+    setNumber(currentNumberOfEvents);
+  }, [currentNumberOfEvents]);
 
   return (
     <>

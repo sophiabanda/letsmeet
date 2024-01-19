@@ -1,6 +1,7 @@
 import Event from "./Event";
 
 const EventList = ({ events }) => {
+  console.log("events", events);
   return (
     <ul data-testid="event-list">
       {events

@@ -10,7 +10,7 @@ import EventGenreChart from "./components/EventGenreChart";
 
 const App = () => {
   const [events, setEvents] = useState([]);
-  const [currentNoE, setCurrentNoE] = useState(0);
+  const [currentNumberOfEvents, setCurrentNumberOfEvents] = useState(0);
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
@@ -27,7 +27,7 @@ const App = () => {
     setIsLoading(true);
     const fetchData = async () => {
       const allEvents = await getEvents();
-      setCurrentNoE(allEvents.length);
+      setCurrentNumberOfEvents(allEvents.length);
       setEvents(allEvents);
       setAllLocations(extractLocations(allEvents));
       setIsLoading(false);
@@ -39,7 +39,7 @@ const App = () => {
     currentCity === "See all cities"
       ? events
       : events.filter((event) => event.location === currentCity);
-  filteredEvents = filteredEvents.slice(0, currentNoE);
+  filteredEvents = filteredEvents.slice(0, currentNumberOfEvents);
 
   return (
     <div className="App">
@@ -54,8 +54,8 @@ const App = () => {
         setInfoAlert={setInfoAlert}
       />
       <NumberOfEvents
-        currentNoE={currentNoE}
-        setCurrentNoE={setCurrentNoE}
+        currentNumberOfEvents={currentNumberOfEvents}
+        setCurrentNumberOfEvents={setCurrentNumberOfEvents}
         setErrorAlert={setErrorAlert}
       />
       <div>{isLoading ? <h1 className="loading">Loading...</h1> : null}</div>

@@ -3074,6 +3074,6 @@ const mockData = [
     },
     eventType: "default",
   },
-];
+].map((eventData) => ({ ...eventData, id: crypto.randomUUID() }));
 
 export default mockData;

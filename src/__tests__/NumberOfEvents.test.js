@@ -16,14 +16,14 @@ it("contains a default value of events length", () => {
 });
 
 it("has value that changes with user input", async () => {
-  const currentNoE = 35;
-  const setCurrentNoE = jest.fn();
+  const currentNumberOfEvents = 35;
+  const setCurrentNumberOfEvents = jest.fn();
   const setErrorAlert = jest.fn();
 
   render(
     <NumberOfEvents
-      currentNoE={currentNoE}
-      setCurrentNoE={setCurrentNoE}
+      currentNumberOfEvents={currentNumberOfEvents}
+      setCurrentNumberOfEvents={setCurrentNumberOfEvents}
       setErrorAlert={setErrorAlert}
     />
   );

@@ -28,10 +28,18 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
   const handleItemClicked = (event) => {
     const value = event.target.textContent;
+    console.log("value", value);
     setQuery(value);
     setShowSuggestions(false);
     setCurrentCity(value);
     setInfoAlert("");
+  };
+
+  const handleClear = () => {
+    setQuery("");
+    setShowSuggestions(false);
+    setCurrentCity("See all cities");
+    console.log("clicked!");
   };
 
   let ref = useRef();
@@ -73,7 +81,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
                 </li>
               );
             })}
-            <li onClick={handleItemClicked}>See all cities</li>
+            <li onClick={handleClear}>See all cities</li>
           </ul>
         ) : null}
       </div>
