@@ -35,6 +35,11 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setInfoAlert("");
   };
 
+  //How does the value returning to its originial state of "See all cities" ensure the clearing of that data?
+  //I was able to achieve the same result with setting the li item name to "See all cities" as I was with
+  //the below funciton, and setting the li to All cities would break it entirely, even when trying to implement
+  //the handleClear func
+
   // const handleClear = () => {
   //   setQuery("");
   //   setShowSuggestions(false);
