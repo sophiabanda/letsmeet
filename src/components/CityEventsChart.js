@@ -9,12 +9,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const CityEventsChart = ({ allLocations, events }) => {
+const CityEventsChart = ({ allLocations, events, currentNumberOfEvents }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     setData(getData());
-  }, [`${events}`]);
+  }, [currentNumberOfEvents, events]);
   //I am not understanding well enough what should be in the dependency array and why
 
   const getData = () => {

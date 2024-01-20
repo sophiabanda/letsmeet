@@ -64,7 +64,11 @@ const App = () => {
           events={filteredEvents}
           currentNumberOfEvents={currentNumberOfEvents}
         />
-        <CityEventsChart allLocations={allLocations} events={filteredEvents} />
+        <CityEventsChart
+          allLocations={allLocations}
+          currentNumberOfEvents={currentNumberOfEvents}
+          events={filteredEvents}
+        />
       </div>
       <EventList events={filteredEvents} />
     </div>
