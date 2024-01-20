@@ -35,11 +35,11 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setInfoAlert("");
   };
 
-  const handleClear = () => {
-    setQuery("");
-    setShowSuggestions(false);
-    setCurrentCity("See all cities");
-  };
+  // const handleClear = () => {
+  //   setQuery("");
+  //   setShowSuggestions(false);
+  //   setCurrentCity("See all cities");
+  // };
 
   let ref = useRef();
   useEffect(() => {
@@ -80,7 +80,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
                 </li>
               );
             })}
-            <li onClick={handleClear}>See all cities</li>
+            <li onClick={handleItemClicked}>See all cities</li>
           </ul>
         ) : null}
       </div>
