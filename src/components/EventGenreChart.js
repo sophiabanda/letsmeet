@@ -5,14 +5,7 @@ import { useEffect, useState } from "react";
 
 const EventGenreChart = ({ events, currentNumberOfEvents }) => {
   const [data, setData] = useState([]);
-  const genres = [
-    "React",
-    "Javascript",
-    "Angular",
-    "jQuery",
-    "Node",
-    "React Native",
-  ];
+  const genres = ["React", "Javascript", "Angular", "jQuery", "Node", "Native"];
   const colors = [
     "#c0c0fc",
     "#120481",

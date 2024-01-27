@@ -26,6 +26,7 @@ const CityEventsChart = ({ allLocations, events }) => {
     };
     setData(getData());
   }, [allLocations, events]);
+  console.log(events);
 
   //once we got to a small enough number, the noe was the same for each bc [objectObject]
 
