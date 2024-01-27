@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 // const RADIAN = Math.PI / 180;
 
-const EventGenreChart = ({ events, currentNumberOfEvents }) => {
+const EventGenreChart = ({ events }) => {
   const [data, setData] = useState([]);
   const genres = ["React", "Javascript", "Angular", "jQuery", "Node", "Native"];
   const colors = [
