@@ -9,24 +9,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const CityEventsChart = ({ allLocations, events, currentNumberOfEvents }) => {
+const CityEventsChart = ({ allLocations, events }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    const getData = () => {
+      const data = allLocations.map((location) => {
+        const count = events.filter(
+          (event) => event.location === location
+        ).length;
+        const city = location.split(/, | - /)[0];
+        return { city, count };
+      });
+      console.log({ data });
+      return data;
+    };
     setData(getData());
-  }, [currentNumberOfEvents, events]);
-  //I am not understanding well enough what should be in the dependency array and why
+  }, [allLocations, events]);
 
-  const getData = () => {
-    const data = allLocations.map((location) => {
-      const count = events.filter(
-        (event) => event.location === location
-      ).length;
-      const city = location.split(/, | - /)[0];
-      return { city, count };
-    });
-    return data;
-  };
+  //once we got to a small enough number, the noe was the same for each bc [objectObject]
 
   return (
     <ResponsiveContainer width="99%" height={400}>

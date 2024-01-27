@@ -24,7 +24,7 @@ const EventGenreChart = ({ events, currentNumberOfEvents }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [currentNumberOfEvents, events]);
+  }, [events]);
 
   const renderCustomizedLabel = ({
     cx,
@@ -64,7 +64,7 @@ const EventGenreChart = ({ events, currentNumberOfEvents }) => {
     });
     return data;
   };
-
+  // console.log("rendering genre");
   return (
     <ResponsiveContainer width="99%" height={400}>
       <PieChart>
